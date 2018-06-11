@@ -1,0 +1,15 @@
+version: '3'
+
+services:
+
+  adminer:
+    image: clue/adminer
+    container_name: adminer
+    restart: always
+    environment:
+      - VIRTUAL_HOST=adminer.127.0.0.1.xip.io
+
+networks:
+  default:
+    external:
+      name: proxy

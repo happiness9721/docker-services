@@ -1,0 +1,20 @@
+version: '3'
+
+services:
+
+  mysql:
+    image: mysql:5.7
+    container_name: mysql
+    restart: always
+    volumes:
+      - ./data:/var/lib/mysql
+      - ./log:/var/log/mysql
+      - ./config/my.cnf:/etc/my.cnf
+#      - ./config:/etc/mysql/conf.d
+    environment:
+       MYSQL_ROOT_PASSWORD: Root1234@
+
+networks:
+  default:
+    external:
+      name: proxy
